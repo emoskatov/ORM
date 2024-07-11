@@ -16,8 +16,9 @@ def create_connection(sqlsystem='postgresql', login='postgres', password='postgr
     return engine
 
 
+# пароль для защиты получаем из переменной окружения
 engine = create_connection(password=getenv(
-    "DB_PASSWORD"))  # Подключение к БД, когда не передаем дополнительные параметры они прописаны по умолчанию, пароль для сохраности получаем из переменной окружения
+    "DB_PASSWORD"))  # Подключение к БД, когда не передаем дополнительные параметры они прописаны по умолчанию
 
 create_tables(engine)
 
